@@ -16,7 +16,10 @@ class LandingPage extends Controller
     public function __invoke(Request $request)
     {
         //
-        $usuarios = HTTP::get('https://jsonplaceholder.typicode.com/users');
+        // $usuarios = HTTP::get('https://jsonplaceholder.typicode.com/users');
+        $usuarios = HTTP::get('https://gurunavi-restaurant-search.p.rapidapi.com/RestSearchAPI/v3/');
+
+
         $usuariosArray = $usuarios->json();
 
         return view('landing', compact('usuariosArray'));
